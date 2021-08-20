@@ -1,0 +1,40 @@
+.panels {
+    display: flex;
+}
+
+.panel {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.panel.active {
+    flex-grow: 4;
+}
+
+.panel p, .panel.active p {
+    transition: all 1.2s ease-in-out;
+}
+
+.panel p:nth-child(2), .panel.active:nth-child(2) {
+    transition: all 1s ease-in-out;
+}
+.panel.active p:nth-child(2) {
+    font-size: 5em;
+}
+
+.panel p:first-child {
+    transform: translateY(-500px);
+}
+.panel.active p:first-child {
+    transform: translateY(-150px);
+}
+
+.panel p:nth-child(3) {
+    transform: translateY(500px);
+}
+
+.panel.active p:nth-child(3) {
+    transform: translateY(150px);
+}
