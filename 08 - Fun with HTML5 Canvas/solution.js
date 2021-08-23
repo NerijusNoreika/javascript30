@@ -15,7 +15,6 @@ ctx.lineCap  = 'round';
 
 
 canvas.addEventListener('mousedown', (e) => {
-    console.log(e);
     drawing  = true
     lastX = e.offsetX;
     lastY = e.offsetY;
