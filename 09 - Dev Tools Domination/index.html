@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log('String literal');
+
+    // Interpolated
+    console.log('Interpolation at work %s', 'yay!')
+
+    // Styled
+    console.log('%cStyled text', 'color: #39f;')
+    // warning!
+    console.warn('Warning');
+    // Error :|
+    console.error('Error');
+    // Info
+    console.info('Info');
+    // Testing
+    console.assert( 1 === 2, '1 is not equal to 2');
+
+    // clearing
+    // console.clear();
+
+    // Viewing DOM Elements
+    let p = document.querySelector('p');
+    console.dir(p);
+
+    // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+        console.log(`Dog name ${dog.name}`);
+        console.log(`Dog name ${dog.age}`);
+      console.groupEnd(`${dog.name}`);
+    });    
+
+
+    // counting
+    console.count('Count')
+    console.count('Count')
+    console.count('Another Count');
+    console.count('Another Count');
+    console.count('Another Count');
+    console.count('Another Count');
+    console.count('Count')
+    console.count('Count')
+    console.count('Count')
+
+    
+    // timing
+    console.time();
+
+    setTimeout(() => {
+      console.timeEnd();
+    }, 1000)
+
+  </script>
+</body>
+</html>
