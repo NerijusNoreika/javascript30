@@ -9,7 +9,6 @@ window.addEventListener('keydown', e => {
     if (shortcutTracking.length === 11) {
         let data = shortcutTracking.join('');
         if (data === pattern) {
-            document.body.style.background = "#39f";
             document.body.classList.add('pattern');
             document.body.innerHTML = "<h1> Pattern triggered </h1>";
         }
