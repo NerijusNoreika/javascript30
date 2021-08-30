@@ -2,14 +2,9 @@
 let storage = localStorage;
 const addItems = document.querySelector('.add-items');
 const itemsList = document.querySelector('.plates');
-const items = [];
+const items = JSON.parse(storage.getItem('items')) || [];
 
 window.addEventListener('load', function(e) {
-    if (storage.getItem('items')) {
-        for (let item of JSON.parse(storage.getItem('items'))) {
-            items.push(item);
-        }
-    }
     populateList(items, itemsList);
 });
 
@@ -45,6 +40,7 @@ function addItem(e) {
 }
 
 function populateList(items, list) {
+    if (items.length <= 0) return;
     list.innerHTML = items.map((item, i) => {
         let bool = item.checked === true ?  'checked' : '';
         return `
