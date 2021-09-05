@@ -1,13 +1,14 @@
 const loc = navigator.geolocation;
-speedIndicator = document.querySelector('.speed-value');
-arrow = document.querySelector('.arrow');
+const speedIndicator = document.querySelector('.speed-value');
+const arrow = document.querySelector('.arrow');
 
 loc.watchPosition(successCallback, failureCallback);
 
 function successCallback(e) {
-  let data = e.coords,
-      speed = data.speed,
-      direction = data.heading;
+  let data = e.coords;
+  let speed = data.speed;
+  let direction = data.heading;
+
   if (speed) {
     speedIndicator.textContent = parseFloat(speed * 3.6).toFixed(2);
   }
