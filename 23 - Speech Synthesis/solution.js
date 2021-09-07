@@ -1,9 +1,10 @@
 const voiceProps = new SpeechSynthesisUtterance();
-const synth = window.speechSynthesis;
-const voicesDropdown = document.querySelector('[name="voice"]');
-const options = document.querySelectorAll('[type="range"], [name="text"]');
-const speakButton = document.querySelector('#speak');
-const stopButton = document.querySelector('#stop');
+const synth = window.speechSynthesis,
+      voicesDropdown = document.querySelector('[name="voice"]'),
+      options = document.querySelectorAll('[type="range"], [name="text"]'),
+      speakButton = document.querySelector('#speak'),
+      stopButton = document.querySelector('#stop');
+      
 let voices = [];
 
 function populateVoices() {
