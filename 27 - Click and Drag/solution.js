@@ -31,7 +31,6 @@ function handleMouseUp(event) {
     } else if (totalScroll > items.scrollWidth - items.clientWidth) {
         totalScroll = items.scrollWidth - items.clientWidth;
     } 
-    console.log(totalScroll);
     items.classList.remove('active');
 }
 
